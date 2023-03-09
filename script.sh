@@ -1,20 +1,13 @@
-!/usr/bin/env bash
 
 # JSONNET_PATH=grafonnet-lib \
-#   jsonnet dashboard.jsonnet > dashboard.json
-
-# JSONNET_PATH=grafonnet-lib \
-#   jsonnet jvm.jsonnet > jvm.json
-
-  # JSONNET_PATH=grafonnet-lib \
-  # jsonnet server_pending.jsonnet > server_pending.json
-
-  JSONNET_PATH=grafonnet-lib \
-  jsonnet temp.jsonnet 
+#   jsonnet mssql.jsonnet > mssql.json
 
 
-payload="{\"dashboard\": $(jq . dashboard.json), \"overwrite\": true}"
+ JSONNET_PATH=grafonnet-lib \
+  jsonnet elk.jsonnet > elk.json
 
+
+payload="{\"dashboard\": $(jq . elk.json), \"overwrite\": true}"
 
 
 curl -X POST $BASIC_AUTH \
