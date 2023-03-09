@@ -22,7 +22,8 @@ jobs:
       
       - name: Install Jsonnet
         run:  |
-          sudo apt-get update
+          sudo su
+          apt-get update
           apt install jsonnet
 
       # Runs a set of commands using the runners shell
