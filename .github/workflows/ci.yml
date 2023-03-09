@@ -19,6 +19,9 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
+      
+      - name: Install Jsonnet
+        run:  apt install jsonnet
 
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
