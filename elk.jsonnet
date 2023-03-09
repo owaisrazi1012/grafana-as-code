@@ -95,7 +95,7 @@ grafana.dashboard.new(
   )
    .addPanel(
     singlestat.new(
-      'Active Primary Shard',
+      'Active Primary Shards',
       span=4,
       valueName='current',
     )
