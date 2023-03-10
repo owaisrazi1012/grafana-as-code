@@ -29,17 +29,19 @@ jobs:
        
       - name: Deploying artifactory
         run: |
-          echo "Starting script for deploying to Jfrog"
-        
+          echo "Starting script for deploying to Jfrog
+          
+          files_list=$(find . -path ./grafonnet-lib -prune -o -name '*.jsonnet')
+          
+          ls 
+          
           echo "Creating directory"
           mkdir grafonnet
           
            echo "Cloning directory"
           git clone https://github.com/grafana/grafonnet-lib.git
           
-          ls
-          
-          files_list=$(find . -path ./grafonnet-lib -prune -o -name '*.jsonnet')
+         
           
           while IFS= read -r jsonnet_file;
           do
