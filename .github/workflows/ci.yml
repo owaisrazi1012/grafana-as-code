@@ -29,7 +29,7 @@ jobs:
        
       - name: Deploying artifactory
         run: |
-          echo "Starting script for deploying to Jfrog
+          echo "Starting script for deploying to Jfrog"
           
           files_list=$(find . -path ./grafonnet-lib -prune -o -name '*.jsonnet')
           
