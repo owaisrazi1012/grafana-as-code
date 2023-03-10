@@ -36,7 +36,7 @@ jobs:
                 
           echo "Creating directory"
           mkdir grafonnet
-          ls
+  
           echo "Cloning directory"
           git clone https://github.com/grafana/grafonnet-lib.git
           
@@ -51,8 +51,12 @@ jobs:
           JSONNET_PATH=grafonnet-lib \
           jsonnet $jsonnet_file > grafonnet/$filename.json
           done <<< "$files_list"
+          
           tar -cvzf grafonnet.tar.gz grafonnet/
+          
           version=$(cat version.txt)
           echo $version + 0.1 | bc > version.txt
           version=$(cat version.txt)
+          
+        
           curl -u ${{ secrets.JFROG_USER }} -T grafonnet.tar.gz "https://grafanaascode.jfrog.io/artifactory/temp123-generic/grafonnet/$version/grafonnet.tar.gz"
