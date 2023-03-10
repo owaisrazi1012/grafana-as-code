@@ -40,8 +40,6 @@ jobs:
           echo "Cloning directory"
           git clone https://github.com/grafana/grafonnet-lib.git
           
-         
-          
           while IFS= read -r jsonnet_file;
           do
           echo $jsonnet_file
