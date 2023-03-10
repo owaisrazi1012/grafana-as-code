@@ -26,6 +26,8 @@ jobs:
           sudo apt install jsonnet
           jsonnet -v
           ls
+          cd grafonnet-lib
+          ls
        
       - name: Deploying artifactory
         run: |
